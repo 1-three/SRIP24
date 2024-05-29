@@ -25,7 +25,7 @@ import requests
 from bs4 import BeautifulSoup
 
 #update link acc to website to scrape
-url = "https://indiankanoon.org/doc/18291089/"
+url = "https://indiankanoon.org/doc/28682724/"
 response = requests.get(url)
 
 if response.status_code == 200:
@@ -33,7 +33,7 @@ if response.status_code == 200:
 
     webpage_text = soup.get_text()
     #set output file beforehand to print text to
-    output_file_path = 'D:\college\starting\SRIP24\supremecourt12-2023to4-2024.txt'
+    output_file_path = "D:\college\starting\SRIP24\MadanBhargavAndSons\doc.txt"
     with open(output_file_path, 'w', encoding='utf-8') as output_file:
         output_file.write(webpage_text)
 
