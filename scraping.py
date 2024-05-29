@@ -1,19 +1,15 @@
 '''
 import PyPDF2
 
-# Open the PDF file in binary mode
 with open('D:\college\starting\SRIP24\data.pdf', 'rb') as file:
     # Create a PDF reader object
     pdf_reader = PyPDF2.PdfReader(file)
     
-    # Initialize an empty string to store the extracted text
     pdf_text = ''
     
-    # Loop through each page of the PDF and extract text
     for page_num in range(len(pdf_reader.pages)):
         pdf_text += pdf_reader.pages[page_num].extract_text()
 
-# Write the extracted text to a new text file
 output_file_path = 'D:\college\starting\SRIP24\extracted_text.txt'
 with open(output_file_path, 'w', encoding='utf-8') as output_file:
     output_file.write(pdf_text)
